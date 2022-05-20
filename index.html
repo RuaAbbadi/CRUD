@@ -27,14 +27,11 @@
         <label for="">Employee Salary</label>
         <input class="inputs" type="number" placeholder="Employee salary" id="employeeSalary">
         <button id="click" class="btn">Add</button>
-        <button class="btn" >Clear</button>
+        <button type="reset" class="btn" >Clear</button>
     </div>
     
-        <input type="search" placeholder="Search..." id="search" >
+        <input type="search" placeholder="Search..." id="search" onkeyup="search(this.value)" >
        
-       
-    
-
     <table border="1">
         <thead>
             <tr>
@@ -47,7 +44,10 @@
                 <th>Delete</th>
             </tr>
         </thead>
-
+        <div class="operations">
+            <button id="deleteBtn" class="btn">Delete All</button>
+        </div>
+    
         <tbody id="data">
 
            

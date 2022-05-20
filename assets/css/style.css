@@ -22,9 +22,9 @@ button{
     background-color: #ffffff;
     border: 1px solid black;
     color: #a2a2a2;
-    width: 93px;
-    margin-bottom: 10px;
-    height: 35px;
+    width: 120px;
+    margin-bottom: 20px;
+    height: 40px;
     transition:1px;
     margin-top: 10px;
 }
@@ -40,6 +40,7 @@ th,td{
     color:red;
     height: 25px;
     width:50px;
+    cursor: pointer;
 }
 .delete i{
     font-size: 15px;
@@ -49,6 +50,7 @@ th,td{
     color:orange;
     height: 25px;
     width:50px;
+    cursor: pointer;
 }
 table{
     border :1px solid #fff;
@@ -65,7 +67,9 @@ thead{
 .error{
     margin: 15px;
 }
-
 .search{
     display: flex;
+}
+.operations {
+    text-align: right;
 }
