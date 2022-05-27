@@ -2,8 +2,8 @@ input{
     display:block;
     widtH:100%;
     margin:10px 0;
-    height:25px;
-    padding: 2px 10px;
+    height:40px;
+    padding: 10px 10px;
     outline-color:#a2a2a2;
 }
 .container{
@@ -19,7 +19,7 @@ input{
     text-align: center;
 }
 button{
-    background-color: #ffffff;
+    background-color:transparent;
     border: 1px solid black;
     color: #a2a2a2;
     width: 120px;
@@ -27,16 +27,15 @@ button{
     height: 40px;
     transition:1px;
     margin-top: 10px;
+    cursor:pointer;
 }
 .btn:hover{
     background-color:rgb(65, 71, 133);
     color:white;
 }
-th,td{
-    width:200px;
-}
+
 .delete{
-    border:1px solid #fff;
+    border:1px solid transparent;
     color:red;
     height: 25px;
     width:50px;
@@ -46,7 +45,7 @@ th,td{
     font-size: 15px;
 }
 .update{
-    border:1px solid #fff;
+    border:1px solid transparent;
     color:orange;
     height: 25px;
     width:50px;
@@ -59,8 +58,15 @@ table{
  thead tr th {
     background-color: rgb(65, 71, 133);
     color:#fff;
-    font-size: 12px;
+    font-size: 15px;
+    padding: 15px 0;
 } 
+th,td{
+    width:200px;
+}
+tr:hover{
+    background-color: rgba(65, 71, 133,0.2);
+}
 thead{
     height:35px;
 }

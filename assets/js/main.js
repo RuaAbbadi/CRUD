@@ -6,6 +6,7 @@ var btn=document.getElementById('click');
 var data=document.getElementById('data');
 var inputs=document.getElementsByClassName('inputs');
 var deleteBtn=document.getElementById('deleteBtn');
+var nameAlert=document.getElementById('nameAlert');
 var  currentIndex=0;
 
 if(localStorage.getItem("employeesList")==null){
@@ -38,6 +39,13 @@ function readData(){
 
     employees.push(employee);
     localStorage.setItem("employeesList",JSON.stringify(employees));
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500
+      })
 
 }
 function displayData(){
@@ -61,16 +69,53 @@ function clearForm(){
     for(var i =0 ; i<inputs.length ; i++){
         inputs[i].value="";
     }
+    btn.innerHTML="Add";
 }
 function deleteEmployee(index){
-    employees.splice(index,1);
-    localStorage.setItem("employeesList",JSON.stringify(employees));
-    displayData();
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            employees.splice(index,1);
+            localStorage.setItem("employeesList",JSON.stringify(employees));
+            displayData();
+          Swal.fire(
+            'Deleted!',
+            'The Employee has been deleted.',
+            'success'
+          )
+        }
+      })
+   
 }
 function deleteAll(){
-    localStorage.removeItem("employeesList");
-    employees=[];
-    data.innerHTML="";
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            localStorage.removeItem("employeesList");
+            employees=[];
+            data.innerHTML="";
+          Swal.fire(
+            'Deleted!',
+            'Employees have been deleted.',
+            'success'
+          )
+        }
+      })
+  
 }
 
 function search(searchText){
@@ -114,4 +159,20 @@ function updateCourse(){
     employees[currentIndex].department=employee.department;
     employees[currentIndex].salary=employee.salary;
     localStorage.setItem("employeesList",JSON.stringify(employees));
+}
+
+employeeName.onkeyup=function(){
+    var patternName = /^[A-Z][a-z]{2,8}$/;
+    if(patternName.test(employeeName.value)){
+        btn.removeAttribute("disabled");
+        employeeName.classList.add('is-valid');
+        employeeName.classList.remove('is-invalid');
+        nameAlert.classList.add('d-none');
+    }
+    else{
+        btn.setAttribute("disabled","true");
+        employeeName.classList.add('is-invalid');
+        employeeName.classList.remove('is-valid');
+        nameAlert.classList.remove('d-none');
+    }
 }

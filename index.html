@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./assets/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.3/sweetalert2.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   
  
 </head>
@@ -16,17 +18,17 @@
 
     <div class="add-course">  
         <div class="container">
-            <h1>CRUD System</h1>
-        <label for="">Employee Name</label>
-        <input class="inputs" type="text" placeholder="Employee name"  id="employeeName">
-        <div class="error">please start with capital later</div>
-        <label for="">Employee Age</label>
-        <input class="inputs"  type="number" placeholder="Employee age"  id="employeeAge">
-        <label for="">Employee Department</label>
-        <input class="inputs"  type="text" placeholder="Employee department" id="employeeDepartment" >
-        <label for="">Employee Salary</label>
-        <input class="inputs" type="number" placeholder="Employee salary" id="employeeSalary">
-        <button id="click" class="btn">Add</button>
+            <h1 class="mb-5">CRUD System</h1>
+        <label for="employeeName">Employee Name</label><span class="text-danger"> *</span>
+        <input class="inputs form-control" type="text" placeholder="Employee name"  id="employeeName">
+        <div id="nameAlert" class="alert alert-danger d-none">please start with capital later</div>
+        <label for="employeeAge">Employee Age</label><span class="text-danger"> *</span>
+        <input class="inputs form-control"  type="number" placeholder="Employee age"  id="employeeAge">
+        <label for="employeeDepartment">Employee Department</label><span class="text-danger"> *</span>
+        <input class="inputs form-control"  type="text" placeholder="Employee department" id="employeeDepartment" >
+        <label for="employeeSalary">Employee Salary</label><span class="text-danger"> *</span>
+        <input class="inputs form-control" type="number" placeholder="Employee salary" id="employeeSalary">
+        <button id="click" class="btn" disabled>Add</button>
         <button type="reset" class="btn" >Clear</button>
     </div>
     
@@ -55,7 +57,6 @@
     </table>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.3/sweetalert2.min.js" integrity="sha512-F3F53+tMh/CBxMQ60GN5R4EiFW7PcuND+9IDC3Qpkwc7SfxgzHigRdUO3+2+mNal2ot3Wp6KR0zx8r8BbsW+Bg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
