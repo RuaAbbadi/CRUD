@@ -10,7 +10,16 @@ input{
     width:40%;
     margin:auto;
 }
-.add-course{
+@media(max-width:991px) {
+    .container{
+        width:unset;
+    }
+    .add-course{
+        padding:300px;
+    }
+   
+}
+#addcourse{
     padding:30px;
     width: 80%;
     margin: auto;
@@ -33,7 +42,6 @@ button{
     background-color:rgb(65, 71, 133);
     color:white;
 }
-
 .delete{
     border:1px solid transparent;
     color:red;
@@ -55,7 +63,7 @@ table{
     border :1px solid #fff;
     border-collapse: collapse;
 }
- thead tr th {
+thead tr th {
     background-color: rgb(65, 71, 133);
     color:#fff;
     font-size: 15px;
